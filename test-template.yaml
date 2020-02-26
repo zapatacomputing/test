@@ -1,0 +1,16 @@
+spec:
+  templates:
+
+  - name: print-readme
+    parent: generic-task
+    inputs:
+      parameters:
+      - name: path
+      - name: command
+        value: bash main_script.sh
+      artifacts:
+      - name: main-script
+        path: /app/main_script.sh
+        raw:
+          data: |
+            cat {{inputs.parameters.path}}
