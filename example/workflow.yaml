@@ -1,0 +1,27 @@
+ZapOSApiVersion: v1alpha1
+kind: Workflow
+
+resources:
+- name: testName
+  type: git
+  parameters:
+    url: "git@github.com:zapatacomputing/test.git"
+    branch: "python"
+
+metadata:
+  generateName: welcome-to-orquestra-
+
+spec:
+  entrypoint: say-welcome
+
+  arguments:
+    parameters:
+    - s3-bucket: quantum-engine
+    - s3-key: projects/testing/171004251/
+
+  templates:
+
+  - name: say-welcome
+    steps:
+    - - name: welcome
+        template: welcome-to-orquestra
