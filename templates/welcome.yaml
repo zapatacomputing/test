@@ -5,7 +5,6 @@ spec:
     parent: generic-task
     inputs:
       parameters:
-      - name: path
       - name: command
         value: python3 main.py
       artifacts:
