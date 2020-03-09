@@ -14,3 +14,21 @@ spec:
           data: |
             from orquestra import welcome
             welcome()
+
+  - name: create-star-wars-characters
+    parent: generic-task
+    inputs:
+      parameters:
+      - name: command
+        value: python3 main.py
+      artifacts:
+      - name: main-script
+        path: /app/main.py
+        raw:
+          data: |
+            from orquestra import test_artifact
+            test_artifact()
+    outputs:
+      artifacts:
+      - name: test-artifact
+        path: /app/test_artifact.json
