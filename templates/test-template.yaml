@@ -1,11 +1,12 @@
 spec:
   templates:
 
-  - name: print-readme
+  - name: check-types
     parent: generic-task
     inputs:
       parameters:
-      - name: path
+      - name: p1
+      - name: p2
       - name: command
         value: bash main_script.sh
       artifacts:
@@ -13,4 +14,5 @@ spec:
         path: /app/main_script.sh
         raw:
           data: |
-            cat {{inputs.parameters.path}}
+            print(type({{inputs.parameters.p1}}))
+            print(type({{inputs.parameters.p2}}))
