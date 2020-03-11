@@ -8,7 +8,7 @@ spec:
       - name: p1
       - name: p2
       - name: command
-        value: bash main_script.py
+        value: python3 main_script.py
       artifacts:
       - name: main-script
         path: /app/main_script.py
